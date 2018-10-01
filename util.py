@@ -2,4 +2,4 @@
 
 
 def get_tweet_table_name() -> str:
-    return 'tweet_json'
+    return 'tweet.json'
