@@ -4,6 +4,7 @@ class Table():
         # .jsonファイルをすべて取得(テーブル名のリストを取得)
         # .jsonの中身をdictに変換
         # self.value
+
         pass
 
 
