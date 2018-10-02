@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 # class Oya():
 #     def oya_func(self):
 #         print("I am OYA")

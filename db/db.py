@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 # テーブルクラス
 class Table():
     def __init__(self):
