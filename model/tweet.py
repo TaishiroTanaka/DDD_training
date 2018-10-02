@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 # Valueオブジェクト
 
 class TweetId():
