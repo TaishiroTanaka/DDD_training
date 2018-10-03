@@ -10,3 +10,11 @@ class TweetCommandService:
         self.tweet = tweet
         self.tweet_datasource.register(self.tweet)
         return True
+
+
+class TweetQueryService:
+    def __init__(self, tweet_datasource: TweetDataSource) -> None:
+        self.tweet_datasource = tweet_datasource
+
+    def find(self) -> list:
+        return self.tweet_datasource.find()

@@ -10,8 +10,11 @@ class Table():
         self.data = json.load(self.file_read)
 
     def put_item(self, new_data: dict):
-        value_copy = self.data.copy()
-        value_copy.append(new_data)
+        data_copy = self.data.copy()
+        data_copy.append(new_data)
 
         file_write = open(self.dir_pass, 'w')
-        json.dump(value_copy, file_write, indent=4)
+        json.dump(data_copy, file_write, indent=4)
+
+    def scan(self) -> list:
+        return self.data

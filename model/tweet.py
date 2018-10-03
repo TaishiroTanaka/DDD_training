@@ -1,6 +1,3 @@
-import datetime
-
-
 # Valueオブジェクト
 class TweetId():
     def __init__(self, tweet_id: int) -> None:
@@ -48,14 +45,25 @@ class Tweet():
                  create_date: CreateDate,
                  delete_status: DeleteStatus) -> None:
         self.tweet_id = tweet_id
-        self.tweet_content = content
-        self.tweet_create_date = create_date
-        self.tweet_delete_status = delete_status
+        self.content = content
+        self.create_date = create_date
+        self.delete_status = delete_status
 
     def to_dict(self):
         return {
             'tweet_id': self.tweet_id.value,
-            'tweet_content': self.tweet_content.value,
-            'tweet_create_date': self.tweet_create_date.value,
-            'tweet_delete_status': self.tweet_delete_status.value,
+            'content': self.content.value,
+            'create_date': self.create_date.value,
+            'delete_status': self.delete_status.value,
         }
+               
+    @staticmethod
+    def from_dict(tweet_dict: dict) -> 'Tweet':
+        _dict = tweet_dict.copy()
+
+        return Tweet(
+            tweet_id=TweetId(_dict['tweet_id']),
+            content=Content(_dict['content']),
+            create_date=CreateDate(_dict['create_date']),
+            delete_status=DeleteStatus(_dict['delete_status'])
+        )
