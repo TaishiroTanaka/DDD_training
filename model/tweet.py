@@ -1,3 +1,6 @@
+import datetime
+
+
 # Valueオブジェクト
 class TweetId():
     def __init__(self, tweet_id: int) -> None:
@@ -16,7 +19,7 @@ class Content():
 
 
 class CreateDate():
-    def __init__(self, create_date: str) -> None:
+    def __init__(self, create_date: datetime) -> None:
         self.value = create_date
 
     def validate_type(self) -> bool:
@@ -40,7 +43,6 @@ class DeleteStatus():
 
 
 # エンティティ
-
 class Tweet():
     def __init__(self, tweet_id: TweetId, content: Content,
                  create_date: CreateDate,
