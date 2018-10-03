@@ -1,11 +1,17 @@
+import json
+
+from model.tweet import Tweet
+
+
 # テーブルクラス
 class Table():
-    def __init__(self):
-        # .jsonファイルをすべて取得(テーブル名のリストを取得)
-        # .jsonの中身をdictに変換
-        # self.value
+    def __init__(self, table_name: str):
+        dir_pass = 'db/' + table_name
+        file = open(dir_pass)
+        self.value = json.load(file)
 
-        pass
+    def put_item(self, tweet: Tweet):
+        self.value.update(tweet)
 
 
 # DBクラス
