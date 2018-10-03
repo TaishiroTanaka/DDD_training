@@ -1,6 +1,3 @@
-# import json
-#
-# from dataaccess.dataaccess import DataSource
 from model.tweet import Tweet
 from util import get_tweet_table_name
 from db.db import Table
