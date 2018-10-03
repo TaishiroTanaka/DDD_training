@@ -13,7 +13,7 @@ class TweetFactory:
     @staticmethod
     def create(params):
         tweet_id = int(uuid.uuid4().int)
-        now_datetime = datetime.now()
+        now_datetime = datetime.now().strftime('%Y/%m/%d')
         delete_status = False
 
         tweet = Tweet(

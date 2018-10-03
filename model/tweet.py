@@ -19,7 +19,7 @@ class Content():
 
 
 class CreateDate():
-    def __init__(self, create_date: datetime) -> None:
+    def __init__(self, create_date: str) -> None:
         self.value = create_date
 
     def validate_type(self) -> bool:

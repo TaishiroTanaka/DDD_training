@@ -5,8 +5,8 @@ from model.tweet_factory import TweetFactory
 from service.tweet import TweetCommandService
 
 
-def regist_tweet_handler(params: json):
-    params_dict = json.load(params)
+def regist_tweet_handler(params: str):
+    params_dict = json.loads(params)
     tweet = TweetFactory.create(params_dict)
 
     tweet_datasource = TweetDataSource
@@ -14,5 +14,5 @@ def regist_tweet_handler(params: json):
     result = tweet_command_service.register(tweet)
 
     if result is True:
-        return 'Tweeted!'
+        return 'Tweet completed!'
     return 'Tweet failed.'
