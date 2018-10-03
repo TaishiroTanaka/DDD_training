@@ -1,5 +1,4 @@
 # Valueオブジェクト
-
 class TweetId():
     def __init__(self, tweet_id: int) -> None:
         self.value = tweet_id
