@@ -1,5 +1,5 @@
 class UserId:
-    def __init__(self, user_id: int):
+    def __init__(self, user_id: str):
         self.value = user_id
 
 

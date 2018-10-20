@@ -8,10 +8,8 @@ from model.user import User
 class UserFactory:
     @staticmethod
     def create(params) -> User:
-        user_id = int(uuid.uuid4().int)
-
         user = User(
-            user_id=UserId(user_id),
+            user_id=UserId(params['user_id']),
             name=Name(params['name']),
         )
 

@@ -6,7 +6,7 @@ from service.tweet import TweetCommandService
 from service.tweet import TweetQueryService
 
 
-def regist_tweet_handler(params: str) -> str:
+def register_tweet_handler(params: str) -> str:
     params_dict = json.loads(params)
     tweet = TweetFactory.create(params_dict)
 

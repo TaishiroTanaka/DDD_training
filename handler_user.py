@@ -4,7 +4,7 @@ from dataaccess.user import UserDataSource
 from service.user import UserCommandService
 
 
-def regist_user_handler(params: str) -> str:
+def register_user_handler(params: str) -> str:
     params_dict = json.loads(params)
     user = UserFactory.create(params_dict)
 
