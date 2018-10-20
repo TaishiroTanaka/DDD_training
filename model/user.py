@@ -9,14 +9,14 @@ class Name:
 
 
 class User:
-    def __init__(self, user_id: UserId, name: Name):
+    def __init__(self, user_id: UserId, name: Name) -> None:
         self.user_id = user_id
         self.name = name
 
     def to_dict(self) -> dict:
         return {
-            "user_id": self.user_id,
-            "name": self.name
+            'user_id': self.user_id.value,
+            'name': self.name.value
         }
 
     def from_dict(self) -> 'User':

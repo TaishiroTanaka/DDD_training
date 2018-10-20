@@ -11,7 +11,6 @@ class Table():
     def put_item(self, new_data: dict):
         data_copy = self.data.copy()
         data_copy.append(new_data)
-
         file_write = open(self.dir_pass, 'w')
         json.dump(data_copy, file_write, indent=4)
 

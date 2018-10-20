@@ -1,1 +1,9 @@
 .idea
+db/tweet.json
+db/user.json
+
+__pycache__/
+dataaccess/__pycache__/
+db/__pycache__/
+model/__pycache__/
+service/__pycache__/

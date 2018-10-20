@@ -3,7 +3,7 @@ from util import get_tweet_table_name
 from db.db import Table
 
 
-class TweetDataSource():
+class TweetDataSource:
     @staticmethod
     def register(tweet: Tweet) -> None:
         tweet_table_name = get_tweet_table_name()

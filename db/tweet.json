@@ -1,1 +1,50 @@
-[]
+[
+    {
+        "tweet_id": 317800562014088616956694847058792687562,
+        "content": "\u30b8\u30e7\u30a4\u30d5\u30eb\u306a\u3046",
+        "create_date": "2018/10/04",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 100571863640625619443956737001290079754,
+        "content": "\u30a8\u30e9\u30fc\u304c\u3002\u3002\u3002",
+        "create_date": "2018/10/04",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 324257841866914676226836950778319934134,
+        "content": "\u30a8\u30e9\u30fc\u306a\u304a\u3063\u305f\uff01",
+        "create_date": "2018/10/04",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 270963429540858281655639880024407767932,
+        "content": "\u305d\u308d\u305d\u308d\u5e30\u308d",
+        "create_date": "2018/10/04",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 167797851916180323858488584576121240541,
+        "content": "DDD\u8aad\u66f8\u4f1a\u306a\u3046",
+        "create_date": "2018/10/04",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 244042677905910533355481970622848026059,
+        "content": "\u5b9f\u6f14\u306a\u3046",
+        "create_date": "2018/10/04",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 218325321140915900085644368290320725991,
+        "content": "\u30de\u30c3\u30af\u306a\u3046",
+        "create_date": "2018/10/18",
+        "delete_status": false
+    },
+    {
+        "tweet_id": 118384356562188689015480416016594114875,
+        "content": "\u4f1a\u793e\u306a\u3046",
+        "create_date": "2018/10/20",
+        "delete_status": false
+    }
+]

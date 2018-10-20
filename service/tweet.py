@@ -7,8 +7,7 @@ class TweetCommandService:
         self.tweet_datasource = tweet_datasource
 
     def register(self, tweet: Tweet) -> bool:
-        self.tweet = tweet
-        self.tweet_datasource.register(self.tweet)
+        self.tweet_datasource.register(tweet)
         return True
 
 

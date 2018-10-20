@@ -7,7 +7,7 @@ from model.user import User
 
 class UserFactory:
     @staticmethod
-    def create(params):
+    def create(params) -> User:
         user_id = int(uuid.uuid4().int)
 
         user = User(
