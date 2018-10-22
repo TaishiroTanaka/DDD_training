@@ -15,3 +15,7 @@ def register_user_handler(params: str) -> str:
     if result is True:
         return 'User registration is completed!'
     return 'User registration failed.'
+
+
+def user_authentication_handler(params: str) -> bool:
+    return True
