@@ -1,6 +1,7 @@
 .idea
 db/tweet.json
 db/user.json
+front_status.json
 
 __pycache__/
 dataaccess/__pycache__/
