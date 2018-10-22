@@ -5,8 +5,13 @@ from handler_tweet import register_tweet_handler
 
 content = input("いまどうしてる？\n")
 
-content_dict = {'content': content}
-content_json = json.dumps(content_dict)
-result = register_tweet_handler(content_json)
+file_read = open('front_status.json')
+front_status = json.load(file_read)
+params_dict = {
+    'content': content,
+    'user_id': front_status['user_id'],
+}
+params_json = json.dumps(params_dict)
 
+result = register_tweet_handler(params_json)
 print("\n------- " + result + "-------")

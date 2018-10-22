@@ -7,6 +7,7 @@ from model.tweet import TweetId
 from model.tweet import Content
 from model.tweet import CreateDate
 from model.tweet import DeleteStatus
+from model.tweet import UserId
 
 
 class TweetFactory:
@@ -21,6 +22,7 @@ class TweetFactory:
             content=Content(params['content']),
             create_date=CreateDate(now_datetime),
             delete_status=DeleteStatus(delete_status),
+            user_id=UserId(params['user_id'])
         )
 
         return tweet
