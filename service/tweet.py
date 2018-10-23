@@ -17,3 +17,6 @@ class TweetQueryService:
 
     def find(self) -> list:
         return self.tweet_datasource.find()
+
+    def find_by_user_id(self, user_id: str) -> list:
+        return self.tweet_datasource.find_by_user_id(user_id)

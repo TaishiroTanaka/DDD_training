@@ -19,10 +19,12 @@ def register_tweet_handler(params: str) -> str:
     return 'Tweet failed.'
 
 
-def find_tweet_handler() -> list:
+def find_tweet_handler(params: str) -> list:
+    params_dict = json.loads(params)
+
     tweet_datasource = TweetDataSource
     tweet_query_service = TweetQueryService(tweet_datasource)
-    tweet_list = tweet_query_service.find()
+    tweet_list = tweet_query_service.find_by_user_id(params_dict['user_id'])
 
     tweet_dict_list = []
     for tweet in tweet_list:
