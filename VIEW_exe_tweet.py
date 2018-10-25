@@ -1,17 +1,23 @@
 import json
 
-from handler_tweet import register_tweet_handler
+import requests
+import pprint
 
 
-content = input("いまどうしてる？\n")
+url_items = 'https://msiehe3350.execute-api.ap-northeast-1.amazonaws.com/dev/tweet'
+
+
+content = input('いまどうしてる？\n')
 
 file_read = open('front_status.json')
 front_status = json.load(file_read)
-params_dict = {
+item_data = {
     'content': content,
     'user_id': front_status['user_id'],
 }
-params_json = json.dumps(params_dict)
 
-result = register_tweet_handler(params_json)
-print("\n------- " + result + "-------")
+r_post = requests.post(url_items, json=item_data)
+
+# pprint.pprint(r_post.json())
+r_post_dict = r_post.json()
+print('\n--- ' + r_post_dict['message'] + ' ---')

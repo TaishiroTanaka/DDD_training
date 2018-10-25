@@ -15,10 +15,11 @@ def register_tweet_handler(event, context):
     tweet_command_service = TweetCommandService(tweet_datasource)
     result = tweet_command_service.register(tweet)
 
+    tweet_dict = tweet.to_dict()
     if result is True:
         body = {
             "message": "Tweet Create Request successfully!",
-            "tweet": tweet.to_dict()
+            "tweet_id": tweet_dict['tweet_id']
         }
         return create_response(200, body)
     else:

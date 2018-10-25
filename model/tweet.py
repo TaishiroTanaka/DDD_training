@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class TweetId:
     def __init__(self, tweet_id: int) -> None:
         self.value = tweet_id
@@ -9,7 +12,7 @@ class Content:
 
 
 class CreateDate:
-    def __init__(self, create_date: str) -> None:
+    def __init__(self, create_date: datetime) -> None:
         self.value = create_date
 
 
