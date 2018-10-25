@@ -7,8 +7,7 @@ class TweetCommandService:
         self.tweet_datasource = tweet_datasource
 
     def register(self, tweet: Tweet) -> bool:
-        self.tweet = tweet
-        self.tweet_datasource.register(self.tweet)
+        self.tweet_datasource.register(tweet)
         return True
 
 
@@ -18,3 +17,6 @@ class TweetQueryService:
 
     def find(self) -> list:
         return self.tweet_datasource.find()
+
+    def find_by_user_id(self, user_id: str) -> list:
+        return self.tweet_datasource.find_by_user_id(user_id)
