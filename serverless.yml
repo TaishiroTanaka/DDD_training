@@ -1,0 +1,44 @@
+service: DDD-Twitter
+
+provider:
+  name: aws
+  runtime: python3.6
+  region: ap-northeast-1
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:ap-northeast-1:*:*"
+
+functions:
+  register-tweet:
+    handler: handler_tweet.register_tweet_handler
+    name: register-tweet
+    events:
+      - http:
+          path: tweet/
+          method: POST
+
+resources:
+  Resources:
+    tweetTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        # キーの型を指定
+        AttributeDefinitions:
+        - AttributeName: tweet_id
+          AttributeType: N
+        KeySchema:
+        - AttributeName: tweet_id
+          KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: Tweet

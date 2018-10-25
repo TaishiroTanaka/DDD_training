@@ -1,16 +1,19 @@
 from model.tweet import Tweet
+from dataaccess.dataaccess import DataSource
 from util import get_tweet_table_name
 from db.db import Table
 
 
 class TweetDataSource:
-    @staticmethod
-    def register(tweet: Tweet) -> None:
-        tweet_table_name = get_tweet_table_name()
-        tweet_table = Table(tweet_table_name)
-        tweet_table.put_item(tweet.to_dict())
+    def __init__(self):
+        self.datasource = DataSource.get_dynamodb()
 
-    @staticmethod
+    def register(self, tweet: Tweet) -> None:
+        tweet_table_name = get_tweet_table_name()
+        tweet_table = self.datasource.Table(tweet_table_name)
+        tweet_dict = DataSource.dynamo_type_encode(tweet.to_dict())
+        tweet_table.put_item(Item=tweet_dict)
+
     def find() -> list:
         tweet_table_name = get_tweet_table_name()
         tweet_table = Table(tweet_table_name)
@@ -23,7 +26,6 @@ class TweetDataSource:
 
         return tweet_list
 
-    @staticmethod
     def find_by_user_id(user_id: str) -> list:
         tweet_table_name = get_tweet_table_name()
         tweet_table = Table(tweet_table_name)
